@@ -41,7 +41,7 @@ if(['clients','projects'].includes(r.kind)){
   if(receipts.some(p=>!used.has(p.id)))throw Error('Preserve as parcelas existentes. Reabra o cadastro para conferir a quantidade.');r.installments=r.paymentPlan.length;
  }
 }
-if(r.kind==='finance'&&r.type==='Receita'){
+if(r.kind==='finance'&&r.type==='Receita'&&r.scope!=='personal'){
  const feeId='card-fee-'+r.id,existingFee=rows.find(x=>x.id===feeId),rate=Number(r.cardFeeRate??settings?.documentDefaults?.cardFee)||0,isCard=/cart[aã]o/i.test(String(r.paymentMethod||r.payment||''));
  if(r.status==='Pago'&&isCard&&rate>0){const fee:Entry={...existingFee,id:feeId,kind:'finance',title:'Taxa do cartão · '+r.title,client:r.client||'',project:r.project||'',type:'Despesa',category:'Taxas',status:'Pago',date:r.paidDate||r.date,paidDate:r.paidDate||r.date,value:Math.round(Number(r.value)*rate)/100,sourcePayment:r.id,cardFeeRate:rate,deleted:false};if(!existingFee||Object.keys(fee).some(key=>JSON.stringify(fee[key])!==JSON.stringify(existingFee[key])))put(fee);r.cardFeeRate=rate;}
  else if(existingFee&&!existingFee.deleted)put({...existingFee,deleted:true});

@@ -7,6 +7,8 @@ export function validateRecord(r:ValidationRecord):string|null{
  if(typeof r.id!=='string'||!r.id||r.id.length>100)return 'Identificador inválido.';
  if(typeof r.title!=='string'||!r.title.trim()||r.title.length>500)return 'Preencha o nome ou título (até 500 caracteres).';
  if(r.paymentPlan!==undefined){const error=paymentPlanError(r.paymentPlan,Number(r.value)||0);if(error)return error;}
+ if(r.kind==='finance'&&r.scope!==undefined&&!['personal','studio'].includes(String(r.scope)))return 'Escolha pessoal ou estúdio.';
+ if(r.kind==='finance'&&r.scope==='personal'&&(r.client||r.project))return 'Gastos pessoais não devem estar vinculados a um cliente ou projeto.';
  if(r.kind==='clients'){
   if(r.email&&(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(r.email))||String(r.email).length>254))return 'Confira o endereço de e-mail.';
   if(r.tax&&!/^\d{11}$|^\d{14}$/.test(String(r.tax).replace(/\D/g,'')))return 'O CPF deve ter 11 dígitos e o CNPJ, 14.';
@@ -24,6 +26,7 @@ export function validateRecord(r:ValidationRecord):string|null{
  const pricing:any=r.pricingRules; if(pricing){for(const [key,value] of Object.entries(pricing))if(!Number.isFinite(Number(value))||Number(value)<0||Number(value)>10000)return 'Confira as regras de preço.';if(Number(pricing.studentDiscount)>100)return 'O desconto deve estar entre 0 e 100%.';}
  const services:any=r.services;if(services!==undefined){if(!Array.isArray(services)||services.length>100)return 'Use até 100 serviços.';for(const s of services)if(!s.id||!s.title?.trim()||!s.category?.trim()||!s.unit||['value','fixed','minimum','packageQuantity','packageValue'].some(key=>!Number.isFinite(Number(s[key]))||Number(s[key])<0))return 'Confira os nomes e valores dos serviços.';}
  const doc:any=r.documentDefaults;if(doc&&((doc.cardFee!==undefined&&(!Number.isFinite(Number(doc.cardFee))||Number(doc.cardFee)<0||Number(doc.cardFee)>100))||(doc.adjustments!==undefined&&(!Number.isInteger(Number(doc.adjustments))||Number(doc.adjustments)<0))||(doc.numberStart!==undefined&&(!Number.isInteger(Number(doc.numberStart))||Number(doc.numberStart)<1))))return 'Confira taxa, numeração e rodadas de ajustes.';
+ const personal:any=r.personalFinance;if(personal&&(Object.values(personal).some(v=>!Number.isFinite(Number(v))||Number(v)<0)||(personal.salaryDay!==undefined&&(!Number.isInteger(Number(personal.salaryDay))||Number(personal.salaryDay)<1||Number(personal.salaryDay)>31))))return 'Confira o salário, as reservas e o dia do recebimento.';
  const goals:any=r.goals;if(goals&&Object.values(goals).some(v=>!Number.isFinite(Number(v))||Number(v)<0))return 'Confira os valores das metas.';
  }
  if(r.kind==='settings'&&r.processes!==undefined){if(!Array.isArray(r.processes)||r.processes.length>50)return 'Use até 50 processos.';for(const p of r.processes){if(!p||!Array.isArray(p.steps)||p.steps.length>100)return 'Confira as etapas do processo.';const err=processError(p);if(err)return err;}}

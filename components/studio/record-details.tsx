@@ -1,4 +1,5 @@
 'use client';
+import {useMoney,useMoneyVisibility,HiddenValues} from './money-privacy';
 import {RecordMessages} from './message-scripts';
 import {useEffect,useState} from 'react';
 import {Plus,PenLine,ChevronLeft,ChevronRight,Trash2,RotateCcw,Mail,Phone,MapPin,Check,GripVertical,ChevronUp,ChevronDown} from 'lucide-react';
@@ -9,14 +10,14 @@ import {Table,TableBody,TableCell,TableHead,TableHeader,TableRow} from '@/compon
 import {financeSituation} from '@/lib/work-processes';
 import {localDay,workflow} from '@/lib/operations-data';
 import {budgetTotal} from '@/lib/document-content';
-import {Entry,Kind,Stage,defaultStages,formatMoney,formatDay} from '@/lib/studio-types';
+import {Entry,Kind,Stage,defaultStages,formatDay} from '@/lib/studio-types';
 import {RecordAttachments} from '@/components/studio/record-attachments';
 import {DemandPayments,PaymentEditor} from '@/components/studio/demand-payments';
 import {toast} from 'sonner';
 type Props={settings?:any;demo?:boolean;onAttachmentsUploaded?:(records:Entry[],record:Entry)=>void;onNavigate?:(after:()=>void)=>void;onPaymentEditing?:(editor:PaymentEditor|null)=>void;record:Entry;rows:Entry[];saving:boolean;onBack:()=>void;onEdit:(row:Entry)=>void;onOpen:(row:Entry)=>void;onCreate:(kind:Kind,extra:any)=>void;onPersist:(row:Entry)=>Promise<boolean>;onDelete:(row:Entry)=>void;onHistoryRetry?:()=>void};
 const linkedKinds:[Kind,string][]=[['projects','Projetos'],['budgets','Orçamentos'],['contracts','Contratos'],['briefings','Briefings'],['documents','Documentos'],['agenda','Agenda'],['tasks','Demandas'],['finance','Financeiro']];
 const fieldNames:Record<string,string>={title:'nome',client:'cliente',project:'projeto',email:'e-mail',phone:'telefone',tax:'CPF/CNPJ',address:'endereço',city:'cidade',state:'estado',notes:'observações',status:'situação',deadline:'prazo',value:'valor',stages:'etapas',deleted:'lixeira',archived:'arquivo',scope:'escopo',description:'descrição',startDate:'início',serviceType:'tipo de serviço',date:'data',payment:'pagamento'};
-export function RecordDetails({record,rows,saving,onBack,onEdit,onOpen,onCreate,onPersist,onDelete,onPaymentEditing,onNavigate,onAttachmentsUploaded,demo,settings={}}:Props){
+export function RecordDetails({record,rows,saving,onBack,onEdit,onOpen,onCreate,onPersist,onDelete,onPaymentEditing,onNavigate,onAttachmentsUploaded,demo,settings={}}:Props){const formatMoney=useMoney(),{visible:moneyVisible}=useMoneyVisibility();
  const isProject=record.kind==='projects';
  const active=rows.filter(r=>!r.deleted&&!r.archived);
  const projects=active.filter(r=>r.kind==='projects'&&r.client===record.id);
@@ -49,7 +50,7 @@ export function RecordDetails({record,rows,saving,onBack,onEdit,onOpen,onCreate,
  </>;
 }
 function Info({label,value}:{label:string;value?:string}){return <div><dt>{label}</dt><dd>{value||'Não informado'}</dd></div>}
-function RelatedTable({kind,records,onOpen}:{kind:Kind;records:Entry[];onOpen:(r:Entry)=>void}){return records.length?<Table><TableHeader><TableRow><TableHead>Nome</TableHead><TableHead>Situação</TableHead><TableHead>{['budgets','contracts','finance'].includes(kind)?'Valor':'Data / prazo'}</TableHead></TableRow></TableHeader><TableBody>{records.map(r=><TableRow key={r.id}><TableCell><button className="record-name" onClick={()=>onOpen(r)}>{r.title}</button>{r.kind==='finance'&&<small className="record-subtitle">{r.type}</small>}</TableCell><TableCell><span className="tag">{r.status}</span></TableCell><TableCell>{['budgets','contracts','finance'].includes(kind)?formatMoney(Math.max(0,Number(r.value||0)-Number(r.discount||0))):formatDay(r.deadline||r.date)}</TableCell></TableRow>)}</TableBody></Table>:<div className="related-empty"><p>Nenhum registro vinculado ainda.</p><small>Os dados do cliente e projeto serão preenchidos automaticamente ao adicionar.</small></div>}
+function RelatedTable({kind,records,onOpen}:{kind:Kind;records:Entry[];onOpen:(r:Entry)=>void}){const formatMoney=useMoney();return records.length?<Table><TableHeader><TableRow><TableHead>Nome</TableHead><TableHead>Situação</TableHead><TableHead>{['budgets','contracts','finance'].includes(kind)?'Valor':'Data / prazo'}</TableHead></TableRow></TableHeader><TableBody>{records.map(r=><TableRow key={r.id}><TableCell><button className="record-name" onClick={()=>onOpen(r)}>{r.title}</button>{r.kind==='finance'&&<small className="record-subtitle">{r.type}</small>}</TableCell><TableCell><span className="tag">{r.status}</span></TableCell><TableCell>{['budgets','contracts','finance'].includes(kind)?formatMoney(Math.max(0,Number(r.value||0)-Number(r.discount||0))):formatDay(r.deadline||r.date)}</TableCell></TableRow>)}</TableBody></Table>:<div className="related-empty"><p>Nenhum registro vinculado ainda.</p><small>Os dados do cliente e projeto serão preenchidos automaticamente ao adicionar.</small></div>}
 export function StageEditor({record,saving,onPersist}:{record:Entry;saving:boolean;onPersist:(r:Entry)=>Promise<boolean>}){
  const [stages,setStages]=useState<Stage[]>(record.stages||[]),[dirty,setDirty]=useState(false);
  useEffect(()=>{try{const saved=JSON.parse(localStorage.getItem('ln-stage-draft-'+record.id)||'null');if(saved&&Array.isArray(saved.stages)){setStages(saved.stages);setDirty(true);}}catch{}},[record.id]);
