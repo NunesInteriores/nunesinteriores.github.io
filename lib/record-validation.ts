@@ -1,3 +1,4 @@
+import {paymentPlanError} from './payment-plan';
 import {processError,WorkProcess} from './work-processes';
 export const recordKinds=['clients','projects','budgets','contracts','documents','briefings','agenda','finance','tasks','settings','templates'] as const;
 export type ValidationRecord={id?:unknown;kind?:unknown;title?:unknown;[key:string]:unknown};
@@ -5,6 +6,7 @@ export function validateRecord(r:ValidationRecord):string|null{
  if(!recordKinds.includes(r.kind as any))return 'Módulo inválido.';
  if(typeof r.id!=='string'||!r.id||r.id.length>100)return 'Identificador inválido.';
  if(typeof r.title!=='string'||!r.title.trim()||r.title.length>500)return 'Preencha o nome ou título (até 500 caracteres).';
+ if(r.paymentPlan!==undefined){const error=paymentPlanError(r.paymentPlan,Number(r.value)||0);if(error)return error;}
  if(r.kind==='clients'){
   if(r.email&&(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(r.email))||String(r.email).length>254))return 'Confira o endereço de e-mail.';
   if(r.tax&&!/^\d{11}$|^\d{14}$/.test(String(r.tax).replace(/\D/g,'')))return 'O CPF deve ter 11 dígitos e o CNPJ, 14.';
