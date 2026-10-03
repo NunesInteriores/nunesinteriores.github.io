@@ -10,7 +10,7 @@ function App(){
  const [ready,setReady]=useState(false),[loaded,setLoaded]=useState(false),[error,setError]=useState(''),[busy,setBusy]=useState(false);
  useEffect(()=>{(async()=>{
   const response=await nativeFetch('/firebase-config.json');if(!response.ok)throw Error('Não foi possível carregar a configuração.');
-  const config=await response.json();if(!config.apiKey||!config.authDomain||!config.projectId||!config.ownerUid)throw Error('Configure a conexão com o Firebase.');
+  const config:any=await response.json();if(!config.apiKey||!config.authDomain||!config.projectId||!config.ownerUid)throw Error('Configure a conexão com o Firebase.');
   bridge=createFirebaseBridge(config,nativeFetch);window.fetch=bridge.api;(window as any).__nunesGithub=true;
   if(bridge.hasSession()){setReady(true);return;}
   const appUrl='https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js';
