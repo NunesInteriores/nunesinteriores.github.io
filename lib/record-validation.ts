@@ -1,3 +1,4 @@
+import {budgetTotal} from './document-content';
 import {paymentPlanError} from './payment-plan';
 import {processError,WorkProcess} from './work-processes';
 export const recordKinds=['clients','projects','budgets','contracts','documents','briefings','agenda','finance','tasks','settings','templates'] as const;
@@ -6,7 +7,7 @@ export function validateRecord(r:ValidationRecord):string|null{
  if(!recordKinds.includes(r.kind as any))return 'Módulo inválido.';
  if(typeof r.id!=='string'||!r.id||r.id.length>100)return 'Identificador inválido.';
  if(typeof r.title!=='string'||!r.title.trim()||r.title.length>500)return 'Preencha o nome ou título (até 500 caracteres).';
- if(r.paymentPlan!==undefined){const error=paymentPlanError(r.paymentPlan,Number(r.value)||0);if(error)return error;}
+ if(r.paymentPlan!==undefined){const error=paymentPlanError(r.paymentPlan,r.kind==='budgets'?budgetTotal(r as any):Number(r.value)||0);if(error)return error;}
  if(r.kind==='finance'&&r.scope!==undefined&&!['personal','studio'].includes(String(r.scope)))return 'Escolha pessoal ou estúdio.';
  if(r.kind==='finance'&&r.scope==='personal'&&(r.client||r.project))return 'Gastos pessoais não devem estar vinculados a um cliente ou projeto.';
  if(r.kind==='clients'){

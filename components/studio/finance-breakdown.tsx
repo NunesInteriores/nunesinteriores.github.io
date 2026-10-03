@@ -1,0 +1,5 @@
+'use client';
+import {Entry,formatDay} from '@/lib/studio-types';
+import {Dialog,DialogContent,DialogHeader,DialogTitle,DialogDescription} from '@/components/ui/dialog';
+import {useMoney} from './money-privacy';
+export function FinanceBreakdown({rows,records,title,onClose,onOpen}:{rows:Entry[];records:Entry[]|null;title:string;onClose:()=>void;onOpen:(r:Entry)=>void}){const money=useMoney();return <Dialog open={records!==null} onOpenChange={v=>{if(!v)onClose()}}><DialogContent className="record-dialog"><DialogHeader><DialogTitle>{title}</DialogTitle><DialogDescription>Lançamentos que compõem o valor. Clique para abrir o registro.</DialogDescription></DialogHeader><div className="breakdown-list">{records?.map(r=><button className="breakdown-row" key={r.id} onClick={()=>{onClose();onOpen(r)}}><span><b>{rows.find(c=>c.id===r.client)?.title||r.title}</b><small>{r.title} · {r.type} · {r.status}</small><small>{formatDay(r.status==='Pago'?r.paidDate||r.date:r.date)}</small></span><strong>{money(r.value)}</strong></button>)}{!records?.length&&<p>Nenhum lançamento neste resumo.</p>}</div></DialogContent></Dialog>}

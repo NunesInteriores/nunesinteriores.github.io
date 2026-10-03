@@ -1,0 +1,1802 @@
+[
+  {
+    "id": "4",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Hall / circulação",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      1.5,
+      3,
+      1.1,
+      1.5
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "5",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Hall / circulação",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      2,
+      4,
+      1.5,
+      2
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "6",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Hall / circulação",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      2.6,
+      5.2,
+      2,
+      2.6
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "7",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Banheiro",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      1.9,
+      3.8,
+      1.5,
+      2.2
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "8",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Banheiro",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      2.5,
+      5,
+      2,
+      3
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "9",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Banheiro",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.2,
+      6.5,
+      2.6,
+      3.9
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "10",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Lavabo",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      1.9,
+      3.4,
+      1.5,
+      1.9
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "11",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Lavabo",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      2.5,
+      4.5,
+      2,
+      2.5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "12",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Lavabo",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.2,
+      5.9,
+      2.6,
+      3.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "13",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Quarto",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      2.2,
+      4.1,
+      1.9,
+      2.6
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "14",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Quarto",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      3,
+      5.5,
+      2.5,
+      3.5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "15",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Quarto",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.9,
+      7.2,
+      3.2,
+      4.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "16",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Suíte",
+    "complexity": "Simples",
+    "hours": [
+      1.5,
+      2.6,
+      5.2,
+      2.2,
+      3
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "17",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Suíte",
+    "complexity": "Médio",
+    "hours": [
+      2,
+      3.5,
+      7,
+      3,
+      4
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "18",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Suíte",
+    "complexity": "Completo",
+    "hours": [
+      2.6,
+      4.5,
+      9.1,
+      3.9,
+      5.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "19",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Suíte master",
+    "complexity": "Simples",
+    "hours": [
+      1.9,
+      3.4,
+      6.8,
+      2.6,
+      3.8
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "20",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Suíte master",
+    "complexity": "Médio",
+    "hours": [
+      2.5,
+      4.5,
+      9,
+      3.5,
+      5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "21",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Suíte master",
+    "complexity": "Completo",
+    "hours": [
+      3.2,
+      5.9,
+      11.7,
+      4.5,
+      6.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "22",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Quarto de hóspedes",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      2.2,
+      4.1,
+      1.9,
+      2.6
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "23",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Quarto de hóspedes",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      3,
+      5.5,
+      2.5,
+      3.5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "24",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Quarto de hóspedes",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.9,
+      7.2,
+      3.2,
+      4.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "25",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Closet",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      2.2,
+      4.5,
+      1.9,
+      3
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "26",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Closet",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      3,
+      6,
+      2.5,
+      4
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "27",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Closet",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.9,
+      7.8,
+      3.2,
+      5.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "28",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Sala de estar",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      2.6,
+      5.2,
+      2.2,
+      3
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "29",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Sala de estar",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      3.5,
+      7,
+      3,
+      4
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "30",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Sala de estar",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      4.5,
+      9.1,
+      3.9,
+      5.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "31",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Sala de jantar",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      2.2,
+      4.5,
+      1.9,
+      2.6
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "32",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Sala de jantar",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      3,
+      6,
+      2.5,
+      3.5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "33",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Sala de jantar",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.9,
+      7.8,
+      3.2,
+      4.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "34",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Sala integrada",
+    "complexity": "Simples",
+    "hours": [
+      1.9,
+      3.8,
+      8.2,
+      3,
+      4.5
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "35",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Sala integrada",
+    "complexity": "Médio",
+    "hours": [
+      2.5,
+      5,
+      11,
+      4,
+      6
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "36",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Sala integrada",
+    "complexity": "Completo",
+    "hours": [
+      3.2,
+      6.5,
+      14.3,
+      5.2,
+      7.8
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "37",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Cozinha",
+    "complexity": "Simples",
+    "hours": [
+      1.5,
+      3,
+      6,
+      2.2,
+      3.8
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "38",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Cozinha",
+    "complexity": "Médio",
+    "hours": [
+      2,
+      4,
+      8,
+      3,
+      5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "39",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Cozinha",
+    "complexity": "Completo",
+    "hours": [
+      2.6,
+      5.2,
+      10.4,
+      3.9,
+      6.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "40",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Cozinha gourmet",
+    "complexity": "Simples",
+    "hours": [
+      1.9,
+      3.8,
+      8.2,
+      3,
+      4.5
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "41",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Cozinha gourmet",
+    "complexity": "Médio",
+    "hours": [
+      2.5,
+      5,
+      11,
+      4,
+      6
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "42",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Cozinha gourmet",
+    "complexity": "Completo",
+    "hours": [
+      3.2,
+      6.5,
+      14.3,
+      5.2,
+      7.8
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "43",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Lavanderia",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      1.9,
+      3.8,
+      1.5,
+      2.6
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "44",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Lavanderia",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      2.5,
+      5,
+      2,
+      3.5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "45",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Lavanderia",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.2,
+      6.5,
+      2.6,
+      4.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "46",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Varanda",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      2.2,
+      4.5,
+      1.9,
+      3
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "47",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Varanda",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      3,
+      6,
+      2.5,
+      4
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "48",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Varanda",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.9,
+      7.8,
+      3.2,
+      5.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "49",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Varanda gourmet",
+    "complexity": "Simples",
+    "hours": [
+      1.5,
+      3,
+      6,
+      2.2,
+      3.8
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "50",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Varanda gourmet",
+    "complexity": "Médio",
+    "hours": [
+      2,
+      4,
+      8,
+      3,
+      5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "51",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Varanda gourmet",
+    "complexity": "Completo",
+    "hours": [
+      2.6,
+      5.2,
+      10.4,
+      3.9,
+      6.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "52",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Home office",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      2.2,
+      4.5,
+      1.9,
+      2.6
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "53",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Home office",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      3,
+      6,
+      2.5,
+      3.5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "54",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Home office",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.9,
+      7.8,
+      3.2,
+      4.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "55",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Brinquedoteca",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      2.2,
+      4.5,
+      1.9,
+      2.6
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "56",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Brinquedoteca",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      3,
+      6,
+      2.5,
+      3.5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "57",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Brinquedoteca",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.9,
+      7.8,
+      3.2,
+      4.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "58",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Estúdio",
+    "complexity": "Simples",
+    "hours": [
+      1.5,
+      2.6,
+      5.2,
+      2.2,
+      3
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "59",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Estúdio",
+    "complexity": "Médio",
+    "hours": [
+      2,
+      3.5,
+      7,
+      3,
+      4
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "60",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Estúdio",
+    "complexity": "Completo",
+    "hours": [
+      2.6,
+      4.5,
+      9.1,
+      3.9,
+      5.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "61",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Entrada / foyer",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      1.9,
+      3.8,
+      1.5,
+      2.2
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "62",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Entrada / foyer",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      2.5,
+      5,
+      2,
+      3
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "63",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Entrada / foyer",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.2,
+      6.5,
+      2.6,
+      3.9
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "64",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Despensa",
+    "complexity": "Simples",
+    "hours": [
+      0.8,
+      1.5,
+      3,
+      1.1,
+      1.9
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "65",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Despensa",
+    "complexity": "Médio",
+    "hours": [
+      1,
+      2,
+      4,
+      1.5,
+      2.5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "66",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Despensa",
+    "complexity": "Completo",
+    "hours": [
+      1.3,
+      2.6,
+      5.2,
+      2,
+      3.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "67",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Depósito",
+    "complexity": "Simples",
+    "hours": [
+      0.8,
+      1.1,
+      2.2,
+      0.8,
+      1.5
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "68",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Depósito",
+    "complexity": "Médio",
+    "hours": [
+      1,
+      1.5,
+      3,
+      1,
+      2
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "69",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Depósito",
+    "complexity": "Completo",
+    "hours": [
+      1.3,
+      2,
+      3.9,
+      1.3,
+      2.6
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "70",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Área externa / jardim",
+    "complexity": "Simples",
+    "hours": [
+      1.5,
+      2.2,
+      4.5,
+      1.9,
+      3
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "71",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Área externa / jardim",
+    "complexity": "Médio",
+    "hours": [
+      2,
+      3,
+      6,
+      2.5,
+      4
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "72",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Área externa / jardim",
+    "complexity": "Completo",
+    "hours": [
+      2.6,
+      3.9,
+      7.8,
+      3.2,
+      5.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "73",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Piscina / área de lazer",
+    "complexity": "Simples",
+    "hours": [
+      1.9,
+      3,
+      6,
+      2.2,
+      3.8
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "74",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Piscina / área de lazer",
+    "complexity": "Médio",
+    "hours": [
+      2.5,
+      4,
+      8,
+      3,
+      5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "75",
+    "category": "Residencial — Casa/Apartamento",
+    "room": "Piscina / área de lazer",
+    "complexity": "Completo",
+    "hours": [
+      3.2,
+      5.2,
+      10.4,
+      3.9,
+      6.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "76",
+    "category": "Comercial",
+    "room": "Recepção",
+    "complexity": "Simples",
+    "hours": [
+      1.5,
+      2.6,
+      5.2,
+      2.2,
+      3.8
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "77",
+    "category": "Comercial",
+    "room": "Recepção",
+    "complexity": "Médio",
+    "hours": [
+      2,
+      3.5,
+      7,
+      3,
+      5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "78",
+    "category": "Comercial",
+    "room": "Recepção",
+    "complexity": "Completo",
+    "hours": [
+      2.6,
+      4.5,
+      9.1,
+      3.9,
+      6.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "79",
+    "category": "Comercial",
+    "room": "Escritório / sala administrativa",
+    "complexity": "Simples",
+    "hours": [
+      1.5,
+      2.6,
+      5.2,
+      2.2,
+      3.8
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "80",
+    "category": "Comercial",
+    "room": "Escritório / sala administrativa",
+    "complexity": "Médio",
+    "hours": [
+      2,
+      3.5,
+      7,
+      3,
+      5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "81",
+    "category": "Comercial",
+    "room": "Escritório / sala administrativa",
+    "complexity": "Completo",
+    "hours": [
+      2.6,
+      4.5,
+      9.1,
+      3.9,
+      6.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "82",
+    "category": "Comercial",
+    "room": "Sala de reunião",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      2.2,
+      4.5,
+      1.9,
+      3
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "83",
+    "category": "Comercial",
+    "room": "Sala de reunião",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      3,
+      6,
+      2.5,
+      4
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "84",
+    "category": "Comercial",
+    "room": "Sala de reunião",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.9,
+      7.8,
+      3.2,
+      5.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "85",
+    "category": "Comercial",
+    "room": "Consultório",
+    "complexity": "Simples",
+    "hours": [
+      1.5,
+      2.6,
+      5.2,
+      2.2,
+      3.8
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "86",
+    "category": "Comercial",
+    "room": "Consultório",
+    "complexity": "Médio",
+    "hours": [
+      2,
+      3.5,
+      7,
+      3,
+      5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "87",
+    "category": "Comercial",
+    "room": "Consultório",
+    "complexity": "Completo",
+    "hours": [
+      2.6,
+      4.5,
+      9.1,
+      3.9,
+      6.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "88",
+    "category": "Comercial",
+    "room": "Loja / showroom",
+    "complexity": "Simples",
+    "hours": [
+      1.9,
+      3.8,
+      7.5,
+      3,
+      4.5
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "89",
+    "category": "Comercial",
+    "room": "Loja / showroom",
+    "complexity": "Médio",
+    "hours": [
+      2.5,
+      5,
+      10,
+      4,
+      6
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "90",
+    "category": "Comercial",
+    "room": "Loja / showroom",
+    "complexity": "Completo",
+    "hours": [
+      3.2,
+      6.5,
+      13,
+      5.2,
+      7.8
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "91",
+    "category": "Comercial",
+    "room": "Restaurante / café",
+    "complexity": "Simples",
+    "hours": [
+      2.2,
+      4.5,
+      9,
+      3.8,
+      6
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "92",
+    "category": "Comercial",
+    "room": "Restaurante / café",
+    "complexity": "Médio",
+    "hours": [
+      3,
+      6,
+      12,
+      5,
+      8
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "93",
+    "category": "Comercial",
+    "room": "Restaurante / café",
+    "complexity": "Completo",
+    "hours": [
+      3.9,
+      7.8,
+      15.6,
+      6.5,
+      10.4
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "94",
+    "category": "Comercial",
+    "room": "Salão de beleza",
+    "complexity": "Simples",
+    "hours": [
+      1.9,
+      3.8,
+      7.5,
+      3,
+      4.5
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "95",
+    "category": "Comercial",
+    "room": "Salão de beleza",
+    "complexity": "Médio",
+    "hours": [
+      2.5,
+      5,
+      10,
+      4,
+      6
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "96",
+    "category": "Comercial",
+    "room": "Salão de beleza",
+    "complexity": "Completo",
+    "hours": [
+      3.2,
+      6.5,
+      13,
+      5.2,
+      7.8
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "97",
+    "category": "Comercial",
+    "room": "Clínica / estética",
+    "complexity": "Simples",
+    "hours": [
+      1.9,
+      3.8,
+      7.5,
+      3,
+      5.2
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "98",
+    "category": "Comercial",
+    "room": "Clínica / estética",
+    "complexity": "Médio",
+    "hours": [
+      2.5,
+      5,
+      10,
+      4,
+      7
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "99",
+    "category": "Comercial",
+    "room": "Clínica / estética",
+    "complexity": "Completo",
+    "hours": [
+      3.2,
+      6.5,
+      13,
+      5.2,
+      9.1
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "100",
+    "category": "Comercial",
+    "room": "Academia / estúdio fitness",
+    "complexity": "Simples",
+    "hours": [
+      2.2,
+      3.8,
+      8.2,
+      3,
+      5.2
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "101",
+    "category": "Comercial",
+    "room": "Academia / estúdio fitness",
+    "complexity": "Médio",
+    "hours": [
+      3,
+      5,
+      11,
+      4,
+      7
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "102",
+    "category": "Comercial",
+    "room": "Academia / estúdio fitness",
+    "complexity": "Completo",
+    "hours": [
+      3.9,
+      6.5,
+      14.3,
+      5.2,
+      9.1
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "103",
+    "category": "Comercial",
+    "room": "Hotelaria / quarto",
+    "complexity": "Simples",
+    "hours": [
+      1.5,
+      3,
+      6,
+      2.2,
+      3.8
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "104",
+    "category": "Comercial",
+    "room": "Hotelaria / quarto",
+    "complexity": "Médio",
+    "hours": [
+      2,
+      4,
+      8,
+      3,
+      5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "105",
+    "category": "Comercial",
+    "room": "Hotelaria / quarto",
+    "complexity": "Completo",
+    "hours": [
+      2.6,
+      5.2,
+      10.4,
+      3.9,
+      6.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "106",
+    "category": "Comercial",
+    "room": "Área de atendimento comercial",
+    "complexity": "Simples",
+    "hours": [
+      1.5,
+      3,
+      6,
+      2.2,
+      3.8
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "107",
+    "category": "Comercial",
+    "room": "Área de atendimento comercial",
+    "complexity": "Médio",
+    "hours": [
+      2,
+      4,
+      8,
+      3,
+      5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "108",
+    "category": "Comercial",
+    "room": "Área de atendimento comercial",
+    "complexity": "Completo",
+    "hours": [
+      2.6,
+      5.2,
+      10.4,
+      3.9,
+      6.5
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "109",
+    "category": "Comercial",
+    "room": "Vitrine / fachada comercial",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      2.2,
+      4.5,
+      1.9,
+      3
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "110",
+    "category": "Comercial",
+    "room": "Vitrine / fachada comercial",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      3,
+      6,
+      2.5,
+      4
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "111",
+    "category": "Comercial",
+    "room": "Vitrine / fachada comercial",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.9,
+      7.8,
+      3.2,
+      5.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "112",
+    "category": "Comercial",
+    "room": "Circulação comercial",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      1.9,
+      3.8,
+      1.5,
+      2.2
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "113",
+    "category": "Comercial",
+    "room": "Circulação comercial",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      2.5,
+      5,
+      2,
+      3
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "114",
+    "category": "Comercial",
+    "room": "Circulação comercial",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      3.2,
+      6.5,
+      2.6,
+      3.9
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "115",
+    "category": "Comercial",
+    "room": "Estoque / almoxarifado",
+    "complexity": "Simples",
+    "hours": [
+      1.1,
+      1.5,
+      3,
+      1.1,
+      2.2
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "116",
+    "category": "Comercial",
+    "room": "Estoque / almoxarifado",
+    "complexity": "Médio",
+    "hours": [
+      1.5,
+      2,
+      4,
+      1.5,
+      3
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "117",
+    "category": "Comercial",
+    "room": "Estoque / almoxarifado",
+    "complexity": "Completo",
+    "hours": [
+      2,
+      2.6,
+      5.2,
+      2,
+      3.9
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "118",
+    "category": "Comercial",
+    "room": "Provador",
+    "complexity": "Simples",
+    "hours": [
+      0.8,
+      1.5,
+      3,
+      1.1,
+      1.9
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "119",
+    "category": "Comercial",
+    "room": "Provador",
+    "complexity": "Médio",
+    "hours": [
+      1,
+      2,
+      4,
+      1.5,
+      2.5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "120",
+    "category": "Comercial",
+    "room": "Provador",
+    "complexity": "Completo",
+    "hours": [
+      1.3,
+      2.6,
+      5.2,
+      2,
+      3.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "121",
+    "category": "Comercial",
+    "room": "Caixa / atendimento",
+    "complexity": "Simples",
+    "hours": [
+      0.8,
+      1.5,
+      3,
+      1.1,
+      1.9
+    ],
+    "area": "até 8 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "122",
+    "category": "Comercial",
+    "room": "Caixa / atendimento",
+    "complexity": "Médio",
+    "hours": [
+      1,
+      2,
+      4,
+      1.5,
+      2.5
+    ],
+    "area": "8–15 m²",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  },
+  {
+    "id": "123",
+    "category": "Comercial",
+    "room": "Caixa / atendimento",
+    "complexity": "Completo",
+    "hours": [
+      1.3,
+      2.6,
+      5.2,
+      2,
+      3.2
+    ],
+    "area": "15 m²+",
+    "note": "Estimativa-base; valide conforme o escopo real."
+  }
+]

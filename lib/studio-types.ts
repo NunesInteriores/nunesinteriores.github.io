@@ -1,4 +1,4 @@
-export type Kind='home'|'clients'|'projects'|'budgets'|'contracts'|'documents'|'briefings'|'agenda'|'finance'|'tasks'|'settings'|'templates'|'clientPanel'|'processes'|'manual';
+export type Kind='home'|'clients'|'projects'|'budgets'|'contracts'|'documents'|'briefings'|'agenda'|'finance'|'tasks'|'settings'|'templates'|'clientPanel'|'processes'|'manual'|'consult';
 export type Stage={id:string;title:string;status:'A iniciar'|'Em andamento'|'Concluída';deadline?:string;description?:string;includes?:string;days?:number;dayType?:string;payment?:number;startDate?:string};
 export type Entry={id:string;kind:Kind;title:string;stages?:Stage[];revision?:number;deleted?:boolean;archived?:boolean;[key:string]:any};
 export const defaultStages=()=>['Briefing e levantamento','Estudo de layout','Modelagem 3D e imagens','Apresentação e ajustes','Detalhamento e caderno','Entrega final'].map(title=>({id:crypto.randomUUID(),title,status:'A iniciar' as const,deadline:''}));
