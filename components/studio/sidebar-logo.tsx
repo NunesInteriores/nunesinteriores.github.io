@@ -1,0 +1,6 @@
+'use client';
+import {useRef,useState} from 'react';
+import {Entry} from '@/lib/studio-types';
+import {AssetImage} from './asset-image';
+import {toast} from 'sonner';
+export function SidebarLogo({settings,onPersist,onHome,demo}:{settings:any;onPersist:(r:Entry)=>Promise<boolean>;onHome:()=>void;demo:boolean}){const file=useRef<HTMLInputElement>(null),[busy,setBusy]=useState(false);async function upload(f:File){setBusy(true);try{let url;if(demo)url=URL.createObjectURL(f);else{const body=new FormData();body.set('file',f);const r=await fetch('/api/assets',{method:'POST',body}),data:any=await r.json();if(!r.ok)throw Error(data.error);url=data.url;}await onPersist({...settings,logo:url} as Entry);}catch(e){toast.error((e as Error).message);}finally{setBusy(false);if(file.current)file.current.value='';}}return <div className="brand"><button className="brand-photo" aria-label="Adicionar ou trocar foto do logo" title="Adicionar ou trocar logo" disabled={busy} onClick={()=>file.current?.click()}>{settings.logo?<AssetImage src={settings.logo} alt="Logo NUNES INTERIORES"/>:<span>{busy?'…':'+'}</span>}</button><input hidden type="file" ref={file} accept="image/png,image/jpeg" onChange={e=>{const f=e.target.files?.[0];if(f)upload(f)}}/><button className="brand-name" onClick={onHome}><b>NUNES</b><small>INTERIORES</small></button></div>}

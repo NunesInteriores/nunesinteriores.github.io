@@ -1,0 +1,26 @@
+import {Entry,Clause,Question,formatDay,formatMoney} from './studio-types';
+export const sumItems=(r:Entry)=>r.items?.length?r.items.reduce((total:number,i:any)=>total+Math.round(Number(i.unitValue||0)*Number(i.quantity||0)*100),0)/100:Number(r.value)||0;
+export const budgetTotal=(r:Entry)=>Math.max(0,sumItems(r)-(Number(r.discount)||0));
+export function documentSections(r:Entry,rows:Entry[],settings:any){
+ const client=rows.find(x=>x.id===r.client),project=rows.find(x=>x.id===r.project);
+ const result:{title:string;body:string}[]=[];
+ if(r.kind==='contracts')result.push({title:'Identificação das partes',body:`CONTRATANTE: ${client?.title||'[Nome]'}${client?.tax?', CPF/CNPJ '+client.tax:''}${client?.address?', '+client.address:''}${client?.email?', '+client.email:''}.\nPRESTADORA: ${settings.name||'[Nome]'}, ${settings.title||'LN Interiores'}${settings.tax?', CPF/CNPJ '+settings.tax:''}${settings.address?', '+settings.address:''}${settings.email?', '+settings.email:''}.`});
+ if(project)result.push({title:'Projeto',body:project.title});
+ if(r.kind==='budgets'&&r.audience)result.push({title:'Proposta para',body:r.audience==='Freelancer'?'Freelancer · escritório parceiro':r.audience==='Estudante'?'Estudante':'Cliente final'});
+ if(['budgets','contracts'].includes(r.kind)&&r.deliveryFormats)result.push({title:'Formatos e arquivos entregues',body:r.deliveryFormats});
+ if(r.processSnapshot?.steps?.length){result.push({title:'Processo · '+r.processSnapshot.name,body:r.processSnapshot.summary||''});r.processSnapshot.steps.forEach((s:any,i:number)=>result.push({title:String(i+1).padStart(2,'0')+'. '+s.title,body:[s.description,s.includes?'Inclui:\n'+s.includes:'',`Prazo: ${s.days} dias ${s.dayType}.`,r.paymentScheduleMode==='Parcelas mensais'?`Pagamento conforme parcelamento mensal: ${r.installments||1} parcela(s).`:`Pagamento nesta etapa: ${s.payment}%.`].filter(Boolean).join('\n')}));}
+ if(r.kind==='budgets'&&r.description)result.push({title:'Apresentação',body:r.description});
+ if(r.kind==='budgets'&&r.items?.length)r.items.forEach((i:any,n:number)=>result.push({title:`${n+1}. ${i.title}`,body:[i.description,i.deliverables?'Entregáveis: '+i.deliverables:'',i.term?'Prazo: '+i.term:'',`${i.quantity} × ${formatMoney(i.unitValue)} = ${formatMoney(Number(i.quantity)*Number(i.unitValue))}`].filter(Boolean).join('\n')}));
+ if(['budgets','contracts'].includes(r.kind)){if(r.scope)result.push({title:'Escopo dos serviços',body:r.scope});if(r.term)result.push({title:'Etapas e prazos',body:r.term});result.push({title:'Investimento e pagamento',body:[`Valor total: ${formatMoney(budgetTotal(r))}`,Number(r.discount)>0?'Desconto aplicado: '+formatMoney(r.discount):'',r.installments?`Pagamento em ${r.installments} parcela(s).`:'',r.payment].filter(Boolean).join('\n')});result.push({title:'Ajustes',body:`Estão previstas ${r.adjustments??2} rodadas de ajustes.`});}
+ if(r.kind==='contracts'){if(r.date)result.push({title:'Data',body:formatDay(r.date)});(r.clausesList||[]).forEach((c:Clause,n:number)=>result.push({title:`${n+1}. ${c.title}`,body:c.body}));if(r.clauses)result.push({title:'Condições adicionais',body:r.clauses});}
+ if(r.kind==='briefings'){if(r.questionsList?.length){r.questionsList.forEach((q:Question,n:number)=>{const response=r.responses?.[q.id];result.push({title:`${n+1}. ${q.label}${q.required?' *':''}`,body:Array.isArray(response)?response.join(', '):response||'________________________________'});});}else(r.questions||'').split('\n').filter(Boolean).forEach((q:string,n:number)=>result.push({title:`${n+1}. ${q}`,body:'________________________________'}));if(r.answers)result.push({title:'Respostas e observações',body:r.answers});}
+ if(r.content){const vars:any={cliente:client?.title||'',projeto:project?.title||'',estudio:settings.title||'',email:client?.email||'',endereco:client?.address||'',cpf:client?.tax||'',data:formatDay(r.date)};result.push({title:'',body:String(r.content).replace(/\{\{(cliente|projeto|estudio|email|endereco|cpf|data)\}\}/g,(_,key)=>vars[key])});}if(r.notes)result.push({title:'Observações',body:r.notes});
+ if(r.kind==='budgets'&&r.validity)result.push({title:'Validade',body:'Proposta válida até '+formatDay(r.validity)});
+ return result;
+}
+export const defaultClauses=()=>[
+ {id:crypto.randomUUID(),title:'Entregas e aprovações',body:'As entregas e as etapas serão desenvolvidas conforme o escopo e os prazos descritos neste contrato. As aprovações e solicitações de alteração serão registradas entre as partes.'},
+ {id:crypto.randomUUID(),title:'Informações fornecidas',body:'A contratante fornecerá os arquivos, medidas e informações necessários ao serviço. Pendências de informação e de aprovação serão alinhadas entre as partes para atualização do cronograma.'},
+ {id:crypto.randomUUID(),title:'Alterações de escopo',body:'Serviços não previstos no escopo e revisões além das rodadas contratadas deverão ser avaliados e acordados separadamente.'},
+ {id:crypto.randomUUID(),title:'Interrupção dos serviços',body:'Em caso de interrupção, as partes apurarão os serviços executados, os materiais desenvolvidos e os valores correspondentes, registrando por escrito as condições da entrega e eventual regularização financeira.'}
+];

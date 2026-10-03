@@ -1,0 +1,3 @@
+'use client';
+import {useEffect,useState} from 'react';
+export function AssetImage({src,alt,className}:{src:string;alt:string;className?:string}){const [resolved,setResolved]=useState(src);useEffect(()=>{if(!(window as any).__nunesGithub||!src.startsWith('/api/assets')){setResolved(src);return;}let active=true,url='';fetch(src).then(async r=>{if(!r.ok)throw Error('Imagem indisponível');return r.blob()}).then(blob=>{if(active){url=URL.createObjectURL(blob);setResolved(url)}}).catch(()=>setResolved(''));return()=>{active=false;if(url)URL.revokeObjectURL(url)}},[src]);return resolved?<img src={resolved} alt={alt} className={className}/>:<span>{alt}</span>}

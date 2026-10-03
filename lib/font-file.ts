@@ -1,0 +1,1 @@
+export function fontFormat(bytes:Uint8Array){const signature=new TextDecoder().decode(bytes.slice(0,4));return signature==='wOF2'?'woff2':signature==='wOFF'?'woff':bytes[0]===0&&bytes[1]===1&&bytes[2]===0&&bytes[3]===0?'ttf':null;}
