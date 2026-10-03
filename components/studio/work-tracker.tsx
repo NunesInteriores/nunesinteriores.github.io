@@ -1,4 +1,5 @@
 'use client';
+import {accountStorage} from '@/lib/account-storage';
 import {useState,useEffect} from 'react';
 import {Entry} from '@/lib/studio-types';
 import {AssetImage} from './asset-image';
@@ -8,10 +9,10 @@ const fresh=()=>({briefing:'',photos:[] as any[],sections:['Ambientes','Modelage
 export function WorkTracker({record,rows,onPersist,onCreate,onOpen,onEdit,onEditing}:{record:Entry;rows:Entry[];onPersist:(r:Entry)=>Promise<boolean>;onCreate:(k:any,x:any)=>void;onOpen:(r:Entry)=>void;onEdit:(r:Entry)=>void;onEditing?:(e:any)=>void}){
  const projects=rows.filter(r=>r.kind==='projects'&&!r.deleted&&r.client===record.id),[project,setProject]=useState(record.kind==='projects'?record.id:''),target=project?rows.find(r=>r.id===project)||record:record;
  const [data,setData]=useState<any>(target.workTracker||fresh()),[dirty,setDirty]=useState(false),[uploading,setUploading]=useState(false);
- useEffect(()=>{let draft=null;try{draft=JSON.parse(localStorage.getItem('nunes-tracker-'+target.id)||'null')}catch{}setData(draft||target.workTracker||fresh());setDirty(!!draft)},[target.id,target.revision]);
- useEffect(()=>{if(!dirty)return;localStorage.setItem('nunes-tracker-'+target.id,JSON.stringify(data));const guard=(e:BeforeUnloadEvent)=>{e.preventDefault();e.returnValue=''};window.addEventListener('beforeunload',guard);return()=>window.removeEventListener('beforeunload',guard)},[dirty,data,target.id]);
- async function save(){if(data.sections.some((s:any)=>!s.title.trim()||s.rooms.some((r:any)=>!r.title.trim()||r.items.some((i:any)=>!i.title.trim())))){toast.error('Preencha os nomes das etapas, ambientes e atividades.');return false;}const ok=await onPersist({...target,workTracker:data});if(ok){localStorage.removeItem('nunes-tracker-'+target.id);setDirty(false);}return ok;}
- useEffect(()=>{onEditing?.(dirty?{save,discard:()=>{localStorage.removeItem('nunes-tracker-'+target.id);setData(target.workTracker||fresh());setDirty(false)}}:null);return()=>onEditing?.(null)},[dirty,data,target.id,target.revision]);
+ useEffect(()=>{let draft=null;try{draft=JSON.parse(accountStorage.getItem('nunes-tracker-'+target.id)||'null')}catch{}setData(draft||target.workTracker||fresh());setDirty(!!draft)},[target.id,target.revision]);
+ useEffect(()=>{if(!dirty)return;accountStorage.setItem('nunes-tracker-'+target.id,JSON.stringify(data));const guard=(e:BeforeUnloadEvent)=>{e.preventDefault();e.returnValue=''};window.addEventListener('beforeunload',guard);return()=>window.removeEventListener('beforeunload',guard)},[dirty,data,target.id]);
+ async function save(){if(data.sections.some((s:any)=>!s.title.trim()||s.rooms.some((r:any)=>!r.title.trim()||r.items.some((i:any)=>!i.title.trim())))){toast.error('Preencha os nomes das etapas, ambientes e atividades.');return false;}const ok=await onPersist({...target,workTracker:data});if(ok){accountStorage.removeItem('nunes-tracker-'+target.id);setDirty(false);}return ok;}
+ useEffect(()=>{onEditing?.(dirty?{save,discard:()=>{accountStorage.removeItem('nunes-tracker-'+target.id);setData(target.workTracker||fresh());setDirty(false)}}:null);return()=>onEditing?.(null)},[dirty,data,target.id,target.revision]);
  const change=(next:any)=>{setData(next);setDirty(true)};const section=(id:string,next:any)=>change({...data,sections:data.sections.map((s:any)=>s.id===id?{...s,...next}:s)});const room=(s:any,r:any,next:any)=>section(s.id,{rooms:s.rooms.map((x:any)=>x.id===r.id?{...x,...next}:x)});
  const items=data.sections.flatMap((s:any)=>s.rooms.flatMap((r:any)=>r.items)),done=items.filter((i:any)=>i.done).length,percent=items.length?Math.round(done/items.length*100):0;
  async function photo(file:File){setUploading(true);try{const form=new FormData();form.set('file',file);const res=await fetch('/api/assets',{method:'POST',body:form}),body:any=await res.json();if(!res.ok)throw Error(body.error);change({...data,photos:[...data.photos,{id:crypto.randomUUID(),url:body.url,name:file.name}]});toast.success('Foto adicionada. Salve o andamento para vinculá-la.')}catch(e){toast.error((e as Error).message)}finally{setUploading(false)}}

@@ -1,0 +1,3 @@
+import {appearanceDefaults,documentDefaults,pricingDefaults} from './studio-settings';
+import {Entry} from './studio-types';
+export function newStudioSettings(name:string,title:string,email:string):Entry{return {id:'studio-settings',kind:'settings',title:title.trim(),name:name.trim(),email,revision:0,onboardingComplete:true,address:'',phone:'',...appearanceDefaults,backgroundColor:'#F6F2EC',textColor:'#2A2A2A',supportColor:'#CDB89C',processes:[],services:[],pricingRules:{...pricingDefaults},documentDefaults:{...documentDefaults,photos:[]},goals:{monthly:0,annual:0},personalFinance:{salary:0,salaryDay:5,savings:0,emergency:0},consultation:{clientRate:0,professionalRate:0,detailRate:0,weeklyHours:10,margin:20,revisions:2,bank:[]}};}

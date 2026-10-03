@@ -6,5 +6,7 @@
   "messagingSenderId": "431962876042",
   "appId": "1:431962876042:web:4f5e40d8212c3cdec26573",
   "measurementId": "G-SHSG7DYES2",
-  "ownerUid": "a4UkOpt4KMSLmVhVtZAqunASfEz2"
+  "ownerUid": "a4UkOpt4KMSLmVhVtZAqunASfEz2",
+  "multiUserEnabled": true,
+  "passwordAuthEnabled": false
 }

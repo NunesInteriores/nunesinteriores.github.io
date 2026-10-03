@@ -1,11 +1,14 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Acesso exclusivo da responsável pelo estúdio.
+    // Each account can access only its own studio. No public access.
     match /users/{userId}/{document=**} {
-      allow read, write: if request.auth != null
-        && request.auth.uid == userId
-        && request.auth.uid == 'a4UkOpt4KMSLmVhVtZAqunASfEz2';
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    // Future plan entitlements are writable by a trusted billing server only.
+    match /subscriptions/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false;
     }
   }
 }
