@@ -36,4 +36,4 @@ export function serviceEstimate(service:StudioService,quantity:number,rules:any,
  if(options.audience==='Estudante')base*=Math.max(0,1-Number(r.studentDiscount)/100);
  return Math.round(base*100)/100;
 }
-export function proposalDefaults(settings:any):Partial<Entry>{const d={...documentDefaults,...settings.documentDefaults};return {presentation:d.presentation,pdfLayout:d.layout,proposalHeading:d.heading,proposalTitle:d.title,term:d.term,payment:d.payment,deliveryFormats:d.deliveryFormats,adjustments:d.adjustments,number:Math.max(Number(d.numberStart)||1,1),studioAbout:d.about,studioPhotos:d.photos,allowPDF:d.usePDF,createContract:d.useContracts};}
+export function proposalDefaults(settings:any):Partial<Entry>{const d={...documentDefaults,...settings.documentDefaults};return {referenceTemplate:'proposal-nunes',presentation:'slides',pdfLayout:d.layout,proposalHeading:d.heading,proposalTitle:d.title,term:d.term,payment:d.payment,deliveryFormats:d.deliveryFormats,adjustments:d.adjustments,number:Math.max(Number(d.numberStart)||1,1),studioAbout:d.about,studioPhotos:d.photos,allowPDF:d.usePDF,createContract:d.useContracts};}

@@ -1,5 +1,6 @@
+import {delivered} from './demand-status';
 import {Entry} from './studio-types';
-const finished=(r:Entry)=>['Concluído','Entregue','Finalizado'].includes(r.status)||r.workflowStatus==='Entregue';
+const finished=(r:Entry)=>delivered(r.status)||delivered(r.workflowStatus);
 /** History is preserved; finance stays in the ledger, but not in the active routine. */
 export function clientInHistory(client:Entry,rows:Entry[]){if(client.archived)return true;const projects=rows.filter(p=>p.kind==='projects'&&p.client===client.id&&!p.deleted),quotes=rows.filter(b=>b.kind==='budgets'&&b.client===client.id&&!b.deleted&&!b.archived&&!b.integration?.completed&&['Rascunho','Enviado'].includes(b.status));return projects.length>0&&projects.every(p=>p.archived||finished(p))&&!quotes.length;}
 export function routineArchived(r:Entry,rows:Entry[]){if(r.archived)return true;if(r.kind==='clients')return clientInHistory(r,rows);if(r.kind==='projects'&&finished(r))return true;const p=rows.find(p=>p.kind==='projects'&&p.id===r.project),c=rows.find(c=>c.kind==='clients'&&c.id===(r.client||p?.client));return !!(p&&(p.archived||finished(p))||c&&clientInHistory(c,rows));}
