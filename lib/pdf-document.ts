@@ -7,6 +7,7 @@ async function fontData(){return fonts??=(Promise.all(['poppins-normal-400','pop
 const hex=(v:any,fallback:string)=>/^#[0-9a-f]{6}$/i.test(v)?v:fallback;
 async function imageData(url:string){try{const r=await fetch(url);if(!r.ok)return null;const bytes=new Uint8Array(await r.arrayBuffer());let raw='';for(const b of bytes)raw+=String.fromCharCode(b);return 'data:'+r.headers.get('content-type')+';base64,'+btoa(raw)}catch{return null}}
 export async function makePDF(entry:Entry,rows:Entry[],settings:any,fontOverride?:string[]){
+ if(['contract-final','contract-freelancer','proposal-nunes'].includes(entry.referenceTemplate)){const {makeReferencePDF}=await import('./reference-pdf');return makeReferencePDF(entry,rows,settings);}
  const {jsPDF}=await import('jspdf');const slides=entry.kind==='budgets'&&entry.presentation==='slides',pdf=new jsPDF({unit:'mm',format:slides?[297,167.0625]:'a4',orientation:slides?'landscape':'portrait'}),data=fontOverride||await fontData();
  ['Poppins','PoppinsBold','Playfair','PlayfairItalic'].slice(0,data.length).forEach((name,i)=>{pdf.addFileToVFS(name+'.ttf',data[i]);pdf.addFont(name+'.ttf',name,'normal');});
  const ink=hex(settings.color,'#2F2F2F'),support=hex(settings.supportColor,'#CDB89C'),accent=hex(settings.italicColor,'#9B8264'),background=hex(settings.backgroundColor,'#F6F2EC'),text=hex(settings.textColor,'#2A2A2A'),titleFont=settings.displayFont==='Arial'?'Poppins':data[3]?'PlayfairItalic':'Playfair',client=rows.find(r=>r.id===entry.client),logo=settings.logo?await imageData(settings.logo):null;

@@ -15,7 +15,7 @@ export function validateRecord(r:ValidationRecord):string|null{
   if(r.tax&&!/^\d{11}$|^\d{14}$/.test(String(r.tax).replace(/\D/g,'')))return 'O CPF deve ter 11 dígitos e o CNPJ, 14.';
   if(r.state&&!/^[A-Z]{2}$/i.test(String(r.state)))return 'Informe o estado com duas letras, como SP.';
  }
- for(const key of ['value','discount','area'])if(r[key]!==undefined&&r[key]!==''&&(!Number.isFinite(Number(r[key]))||Number(r[key])<0))return 'Valores e áreas devem ser números iguais ou maiores que zero.';
+ for(const key of ['value','discount','area','cashValue'])if(r[key]!==undefined&&r[key]!==''&&(!Number.isFinite(Number(r[key]))||Number(r[key])<0))return 'Valores e áreas devem ser números iguais ou maiores que zero.';
  for(const key of ['date','startDate','deadline','validity','paidDate','firstDue','sentDate','approvedDate'])if(r[key]){const value=String(r[key]);if(!/^\d{4}-\d{2}-\d{2}$/.test(value))return 'Confira as datas informadas.';const [year,month,day]=value.split('-').map(Number);const date=new Date(Date.UTC(year,month-1,day));if(date.getUTCFullYear()!==year||date.getUTCMonth()!==month-1||date.getUTCDate()!==day)return 'Confira as datas informadas.';}
  if(r.kind==='projects'&&r.startDate&&r.deadline&&String(r.deadline)<String(r.startDate))return 'A entrega deve ocorrer na data de início ou depois dela.';
  if(r.stages!==undefined){if(!Array.isArray(r.stages)||r.stages.length>100)return 'Use até 100 etapas por projeto.';for(const s of r.stages){if(!s||typeof s!=='object'||typeof s.id!=='string'||typeof s.title!=='string'||!s.title.trim()||!['A iniciar','Em andamento','Concluída'].includes(s.status))return 'Confira o nome e a situação das etapas.';}}
@@ -32,6 +32,8 @@ export function validateRecord(r:ValidationRecord):string|null{
  }
  if(r.kind==='settings'&&r.processes!==undefined){if(!Array.isArray(r.processes)||r.processes.length>50)return 'Use até 50 processos.';for(const p of r.processes){if(!p||!Array.isArray(p.steps)||p.steps.length>100)return 'Confira as etapas do processo.';const err=processError(p);if(err)return err;}}
  if(r.deliveryFormats!==undefined&&(typeof r.deliveryFormats!=='string'||r.deliveryFormats.length>20000))return 'Confira os formatos de entrega.';
+ if(r.referenceTemplate&&!['contract-final','contract-freelancer','proposal-nunes'].includes(String(r.referenceTemplate)))return 'Modelo de documento inválido.';
+ if(r.referenceParagraphs&&(typeof r.referenceParagraphs!=='object'||Array.isArray(r.referenceParagraphs)||Object.keys(r.referenceParagraphs).length>300||Object.values(r.referenceParagraphs).some(v=>typeof v!=='string'||v.length>20000)))return 'Confira os textos do modelo.';
  if(r.templateKind&&!['budgets','contracts','documents','briefings'].includes(String(r.templateKind)))return 'Tipo de modelo inválido.';
  if(r.items!==undefined&&(!Array.isArray(r.items)||r.items.length>100||r.items.some(i=>!i||!i.title?.trim()||!Number.isFinite(Number(i.quantity))||Number(i.quantity)<0||!Number.isFinite(Number(i.unitValue))||Number(i.unitValue)<0)))return 'Confira os serviços, quantidades e valores.';
  if(r.clausesList!==undefined&&(!Array.isArray(r.clausesList)||r.clausesList.length>100||r.clausesList.some(c=>!c?.title?.trim()||typeof c.body!=='string')))return 'Confira o título e texto das cláusulas.';
