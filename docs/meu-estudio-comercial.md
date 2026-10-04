@@ -1,3 +1,7 @@
+# Uso atual: pessoal
+
+Atualizado em 04/10/2026: comercialização pausada. Somente a conta responsável é aceita no app (`multiUserEnabled: false`). Nenhum plano ou cobrança ativado. O texto abaixo fica como planejamento futuro.
+
 # Meu Estúdio — preparação comercial
 
 ## Estado desta entrega

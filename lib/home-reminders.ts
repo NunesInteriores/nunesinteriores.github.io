@@ -1,0 +1,4 @@
+import {Entry} from './studio-types';
+import {complete} from './operations-data';
+import {financeSituation} from './work-processes';
+export function punctualReminders(rows:Entry[],today:string){const last=new Date(today+'T12:00:00Z');last.setUTCDate(last.getUTCDate()+7);const end=last.toISOString().slice(0,10);return rows.filter(r=>!r.deleted&&!r.archived&&!complete(r)&&(r.kind==='finance'&&r.scope!=='personal'&&r.type==='Receita'&&r.status!=='Pago'&&(financeSituation(r,today)==='Atrasado'||r.date&&r.date<=end)||r.kind==='agenda'&&!r.stage&&['Reunião','Visita técnica','Apresentação','Outro','Lembrete'].includes(r.category||'Reunião')&&r.date&&r.date<=end||r.kind==='tasks'&&!r.stage&&['Lembrete','Arquivo pendente','Reunião','Pagamento'].includes(r.category))).sort((a,b)=>(a.deadline||a.date||'z').localeCompare(b.deadline||b.date||'z'));}
